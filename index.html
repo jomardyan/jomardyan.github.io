@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+     <script>
+ function disableClick() {
+    document.onclick = function(event) {
+        if (event.button == 2) {
+            alert('Right Click Message');
+            return false;
+        }
+    }
+}
+(function() {
+    (function a() {
+        try {
+            (function b(i) {
+                if (('' + (i / i)).length !== 1 || i % 20 === 0) {
+                    (function() {}).constructor('debugger')()
+                } else {
+                    debugger
+                }
+                b(++i)
+            })(0)
+        } catch (e) {
+            setTimeout(a, 5000)
+        }
+    })()
+})();
+       
+ </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       img {
@@ -13,7 +40,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onLoad="disableClick()">
     <h1>The website is not available for public use.</h1>
     <h1>Error 511 Network Authentication Required </h1>
   </body>
